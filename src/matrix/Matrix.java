@@ -10,6 +10,18 @@ public class Matrix {
 		this.setRows(rows);
 		this.setData(new double[rows][columns]);
 	}
+	
+	public Matrix(int[][] d) {
+		this.setColumns(d[0].length);
+		this.setRows(d.length);
+		double[][] da = new double[d.length][d[0].length];
+		for(int i = 0; i < d.length; i++) {
+			for(int j = 0; j < d[0].length; j++) {
+				da[i][j] = d[i][j];
+			}
+		}
+		this.setData(da);
+	}
 
 	public Matrix(double[][] data) {
 		this.setColumns(data[0].length);
@@ -32,9 +44,19 @@ public class Matrix {
 	public void setColumns(int columns) {
 		this.columns = columns;
 	}
-
+	
+	/**
+	 * Casting the data to a new array, so it does not return the pointer of the original
+	 * @return a copy of the data
+	 */
 	public double[][] getData() {
-		return data;
+		double[][] ret = new double[data.length][data[0].length];
+		for(int i = 0; i < data.length; i++) {
+			for(int j = 0; j < data[0].length; j++) {
+				ret[i][j] = data[i][j];
+			}
+		}
+		return ret;
 	}
 
 	public void setData(double[][] data) {
