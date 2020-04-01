@@ -2,18 +2,14 @@ package leastsquareapproximation;
 
 import matrix.Matrix;
 
-public class ExponentialApproximation {
+public class ExponentialApproximation extends Approximation{
 	
 	private Matrix data;
 	
 	public ExponentialApproximation(double[][] data) {
-		this.data = new Matrix(data);
+		super(data);
 	}
-	
-	public ExponentialApproximation(int[][] data) {
-		this.data = new Matrix(data);
-	}
-	
+
 	public double[] calc() {
 		
 		double[] exp = new double[2];

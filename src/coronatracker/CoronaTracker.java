@@ -12,7 +12,14 @@ public class CoronaTracker {
 	
 	public int calcNextWeek() {
 		
-		ExponentialApproximation exponentialFunction = new ExponentialApproximation(cases);		
+		double[][] data = new double[cases.length][cases[0].length];
+		for(int i = 0; i < cases.length; i++) {
+			for(int j = 0; j < cases[0].length; j++) {
+				data[i][j] = cases[i][j];
+			}
+		}
+		
+		ExponentialApproximation exponentialFunction = new ExponentialApproximation(data);		
 		double[] exponential = exponentialFunction.calc();
 		
 		//find next data
