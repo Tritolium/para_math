@@ -1,6 +1,6 @@
 package coronatracker;
 
-import leastsquareapproximation.ExponentialApproximation;
+import approximation.ExponentialApproximation;
 
 public class CoronaTracker {
 	

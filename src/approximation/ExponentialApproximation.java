@@ -1,4 +1,4 @@
-package leastsquareapproximation;
+package approximation;
 
 import matrix.Matrix;
 
